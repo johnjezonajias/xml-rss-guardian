@@ -3,6 +3,8 @@
  * Plugin Name: XML/RSS Guardian
  * Description: Safeguard your content by easily disabling XML/RSS feeds with XML/RSS Guardian.
  * Version: 1.0
+ * Requires at least: 5.7
+ * Requires PHP: 7.4
  * Author: John Jezon Ajias
  * Author URI: https://webdevjohnajias.one/
  * License: GPL v2 or later
