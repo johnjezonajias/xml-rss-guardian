@@ -2,36 +2,33 @@
 
 [![License](https://img.shields.io/badge/license-GPL%20v2%20or%20later-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 
-**XML/RSS Guardian** is a WordPress plugin designed to safeguard your content by easily disabling XML/RSS feeds. With XML/RSS Guardian, you can take control over your content distribution channels and prevent unauthorized access or distribution of your content.
+**XML/RSS Guardian** is a lightweight WordPress plugin that disables XML/RSS feeds and removes feed links from your site's `<head>` output.
+
+## What it does
+
+- Disables feed requests for posts and comments.
+- Returns a blocked HTTP response for feed requests (default: `403`).
+- Removes feed discovery links from `wp_head`.
+- Provides filters for developers to customize message/title/response code.
+
+## Developer filters
+
+- `xml_rss_guardian_disabled_message`
+- `xml_rss_guardian_disabled_title`
+- `xml_rss_guardian_response_code`
 
 ## Installation
 
-### Via WordPress Admin Dashboard
-
 1. Download the plugin ZIP file.
 2. Log in to your WordPress admin dashboard.
-3. Navigate to Plugins -> Add New.
-4. Click on the "Upload Plugin" button and select the ZIP file.
-5. Activate the plugin.
+3. Navigate to **Plugins → Add New → Upload Plugin**.
+4. Upload the ZIP and activate **XML/RSS Guardian**.
 
-### Via GitHub Repository
+## Compatibility
 
-1. Clone the GitHub repository to your local machine:
-    ```bash
-    git clone https://github.com/johnjezonajias/xml-rss-guardian.git
-2. Upload the `xml-rss-guardian` directory to your WordPress plugins directory (`wp-content/plugins/`).
-3. Log in to your WordPress admin dashboard.
-4. Navigate to Plugins and activate the XML/RSS Guardian plugin.
-
-## Usage
-
-Once activated, XML/RSS Guardian will automatically disable XML/RSS feeds on your WordPress site. Users attempting to access the feeds will receive a message indicating that the feed is disabled.
-
-## Author
-
-**John Jezon Ajias**
-- Website: [https://webdevjohnajias.one/](https://webdevjohnajias.one/)
+- Requires WordPress **6.0+**
+- Requires PHP **7.4+**
 
 ## License
 
-This project is licensed under the GNU General Public License v2.0 or later. See the [LICENSE](LICENSE) file for details.
+GPL v2 or later. See [LICENSE](LICENSE) for details.

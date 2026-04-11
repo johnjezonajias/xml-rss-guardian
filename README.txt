@@ -1,44 +1,59 @@
 === XML/RSS Guardian ===
 Contributors: johnjezonajias
-Tags: xml, rss, feed, disable, safeguard
+Tags: xml, rss, feed, disable, security
+Requires at least: 6.0
 Requires PHP: 7.4
-Requires at least: 5.7
-Tested up to: 5.9
-Stable tag: 1.0.1
+Tested up to: 6.8
+Stable tag: 1.1.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Safeguard your content by easily disabling XML/RSS feeds with XML/RSS Guardian.
+Safeguard your content by disabling XML and RSS feeds across your WordPress site.
 
 == Description ==
 
-XML/RSS Guardian is a WordPress plugin designed to safeguard your content by easily disabling XML/RSS feeds. With XML/RSS Guardian, you can take control over your content distribution channels and prevent unauthorized access or distribution of your content.
+XML/RSS Guardian disables all public WordPress feed endpoints (post feeds and comment feeds) and removes feed links from your page head output.
+
+This is useful for websites that want stricter control over content syndication or simply do not use RSS feeds.
+
+Developers can customize the disabled message, title, and HTTP response code via filters:
+
+* `xml_rss_guardian_disabled_message`
+* `xml_rss_guardian_disabled_title`
+* `xml_rss_guardian_response_code`
 
 == Installation ==
 
-1. Download the plugin ZIP file.
-2. Log in to your WordPress admin dashboard.
-3. Navigate to Plugins -> Add New.
-4. Click on the "Upload Plugin" button and select the ZIP file.
-5. Activate the plugin.
+1. Upload the `xml-rss-guardian` folder to `/wp-content/plugins/`, or install through the WordPress Plugins screen.
+2. Activate the plugin through the "Plugins" screen in WordPress.
+3. Feed URLs will now return a disabled response.
 
 == Frequently Asked Questions ==
 
-Q: How do I use this plugin?
-A: Once you activate the XML/RSS Guardian plugin, XML/RSS feeds will be automatically disabled on your WordPress site. Users attempting to access the feeds will receive a message indicating that the feed is disabled.
+= How do I re-enable feeds? =
 
-Q: How can I re-enable XML/RSS feeds if needed?
-A: You can temporarily enable XML/RSS feeds by deactivating the XML/RSS Guardian plugin. However, keep in mind that this will make your content vulnerable again. It's recommended to only disable the plugin when absolutely necessary and re-enable it promptly afterward to maintain content security.
+Deactivate XML/RSS Guardian and WordPress feed URLs will work again.
 
-Q: Will this plugin affect my site's SEO?
-A: Disabling XML/RSS feeds should not have a significant impact on your site's SEO, as search engines primarily index your site's HTML content. However, if you have specific concerns about SEO, you may want to consult with an SEO expert or perform thorough testing after installing the plugin.
+= Does this affect SEO? =
 
-Q: Can I customize the message displayed to users when XML/RSS feeds are disabled?
-A: Currently, the message displayed to users when XML/RSS feeds are disabled is not customizable through the plugin settings. However, you can modify the message directly in the plugin code if needed.
+For most sites, this does not significantly affect search indexing because search engines primarily crawl HTML pages.
 
-Q: Is XML/RSS Guardian compatible with other plugins?
-A: XML/RSS Guardian is designed to be compatible with most plugins. However, if you encounter any compatibility issues, please reach out to the plugin's support team for assistance.
+= Can I customize the feed disabled message? =
+
+Yes. Developers can use the plugin filters to change the message, title, and response code.
 
 == Changelog ==
-= 1.0.0 =
-* Plugin released.
+
+= 1.1.1 =
+* Replaced endpoint-specific feed hooks with a central `is_feed()` request blocker.
+* Added filters so developers can customize disabled message, title, and response code.
+* Removed outdated author website reference in plugin metadata.
+
+= 1.1.0 =
+* Updated plugin metadata for modern WordPress compatibility.
+* Added stricter, WordPress-standardized hook usage and i18n-ready strings.
+* Extended feed blocking coverage to include OPML feed endpoints.
+* Refreshed readme content and release metadata.
+
+= 1.0.1 =
+* Initial public release.

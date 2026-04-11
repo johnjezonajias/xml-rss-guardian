@@ -1,0 +1,23 @@
+{
+  "landingPage": "/",
+  "preferredVersions": {
+    "php": "8.2",
+    "wp": "latest"
+  },
+  "features": {
+    "networking": true
+  },
+  "steps": [
+    {
+      "step": "installPlugin",
+      "pluginZipFile": {
+        "resource": "url",
+        "url": "https://downloads.wordpress.org/plugin/xml-rss-guardian.latest-stable.zip"
+      }
+    },
+    {
+      "step": "activatePlugin",
+      "pluginPath": "xml-rss-guardian/xml-rss-guardian.php"
+    }
+  ]
+}
